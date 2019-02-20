@@ -1,0 +1,11 @@
+#!/bin/bash
+# Installation script for ubuntu
+echo 'Installing bundler!!!'
+gem install bundler
+
+echo 'Installing spec gems!!!'
+bundle install
+echo "Installation successfully completed.!!!"
+
+echo "Running spec"
+rspec

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class NumberToWord
-  def mapping(input)
+class Main
+  def new(input)
     num_map = {
       2 => %w[a b c],
       3 => %w[d e f],
