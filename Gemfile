@@ -2,6 +2,9 @@
 
 source 'https://rubygems.org'
 
+# Debugging
+gem 'pry'
+
 # Spec gems
 gem 'rake'
 gem 'rspec'

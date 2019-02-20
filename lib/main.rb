@@ -3,6 +3,9 @@
 class Main
   class << self
     def parse(input)
+      input = input.to_s
+      ph_regex = /\A(\d{10}|\(?\d{3}\)?[-. ]\d{3}[-.]\d{4})\z/
+      return 'Please enter valid input' if input.nil? || input.length != 10 || !ph_regex.match?(input) || /0/.match?(input)
       num_map = {
         2 => %w[a b c],
         3 => %w[d e f],
