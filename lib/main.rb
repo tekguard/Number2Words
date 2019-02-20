@@ -23,7 +23,7 @@ class Main
       end
       matches = {}
       keys = entries.length - 1
-      for i in (1..keys)
+      (1..keys).to_a.each do |i|
         match1 = entries[0..i]
         next if match1.length < 3
 
