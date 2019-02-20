@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-require './lib/number_to_word.rb
-
-ARGF.each do |line|
-  Main.parse(line.delete!("\n"))
-end

@@ -2,7 +2,7 @@
 
 ### Assignment
 
-Given a 10 digit phone number, you must return all possible words or combination of words from the provided dictionary, that can be mapped back as a whole to the number. 
+Given a 10 digit phone number, you must return all possible words or combination of words from the provided dictionary, that can be mapped back as a whole to the number.
 
 With this we can generate numbers like 1-800-motortruck which is easier to remember then 1-800-6686787825
 The phone number mapping to letters is as follows:
@@ -23,7 +23,7 @@ The phone number mapping to letters is as follows:
 
 9 = w x y z
 
-The phone numbers will never contain a 0 or 1. 
+The phone numbers will never contain a 0 or 1.
 
 Words have to be at least 3 characters.
 
@@ -36,7 +36,9 @@ To get give you an initial verifiation, the following must be true:
 The conversion of a 10 digit phone number should be performed within 1000ms.
 
 
-### English words library
+## English words library
+
+English words are copied from : https://github.com/dwyl/english-words
 
 ## Execution
 
@@ -44,7 +46,7 @@ To Run Application with ruby envinoment set use below command:
 
      ./bin/setup
 
-To Run Application withouh ruby envinoment set use below command:
+To Run Application without ruby envinoment set use below command:
 
       ./bin/run_with_spec
 
@@ -52,8 +54,3 @@ To Run Application withouh ruby envinoment set use below command:
 ## Structure
 
 Application path: lib/main.rb
-
-
-
-
-
