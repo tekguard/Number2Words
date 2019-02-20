@@ -46,6 +46,3 @@ class Main
     end
   end
 end
-
-re = Main.parse('6686787825')
-puts re

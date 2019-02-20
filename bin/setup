@@ -1,11 +1,44 @@
 #!/bin/bash
 # Installation script for ubuntu
+sudo echo ""; echo "Root Privilege Acquired"
+
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+  echo 'rvm is already installed in this machine'
+else
+  sudo apt -y update
+  echo 'Installing ruby through rvm !!!'
+  sudo apt-get -y install curl
+  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  curl -sSL https://get.rvm.io -o rvm.sh
+  cat rvm.sh | bash -s stable
+  source ~/.rvm/scripts/rvm
+  echo 'Rvm Installed Successfully'
+  echo 'Installing Ruby...'
+  rvm install ruby --default
+  echo 'Ruby Installed Successfully'
+  echo 'Creating Gemset...'
+  rvm gemset create number_to_word
+  rvm gemset use number_to_word
+  echo "Successfully installed rvm with latest ruby."
+fi
+
 echo 'Installing bundler!!!'
 gem install bundler
 
-echo 'Installing spec gems!!!'
+echo 'Installing application gems!!!'
 bundle install
 echo "Installation successfully completed.!!!"
 
-echo "Running spec"
-rspec
+echo "Starting test case execution!!!"
+output=$(./bin/run_with_spec)
+
+if [[ ${output} =~ 'Failed' ]]; then
+  echo 'Sorry!!! Tast cases are Failed.'
+  echo 'Please run rspec command in Application directory and check manually.'
+  echo 'exit.'
+  echo 1
+else
+  echo 'Test cases are passed successfully!!!'
+  echo 'Build successfully executed!!'
+  echo 'Thank you. ;)'
+fi
